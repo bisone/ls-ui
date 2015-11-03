@@ -1,4 +1,3 @@
-import React from 'react';
-import ReactDOM from "react-dom";
+export  JQGrid from './components/jqgrid/JQGrid.jsx';
 
 

@@ -16,7 +16,7 @@ export default class JQGrid extends React.Component{
 
     initJQueryPlugin() {
         var context = this;
-        this.refs.eventsgrid.jqGrid({
+        $(this.refs.eventsgrid).jqGrid({
             datatype: "local",
             colNames: ['Title'],
             colModel: [
@@ -66,7 +66,7 @@ export default class JQGrid extends React.Component{
     }
 
     componentWillUpdate(){
-        this.refs.eventsgrid.GridUnload();
+        $(this.refs.eventsgrid).GridUnload();
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -74,7 +74,7 @@ export default class JQGrid extends React.Component{
     }
 
     componentWillUnmount(){
-        this.refs.eventsgrid.GridUnload();
+        $(this.refs.eventsgrid).GridUnload();
     }
 
     render () {

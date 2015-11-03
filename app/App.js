@@ -18,5 +18,5 @@ var page =(
 
 );
 
-ReactDOM.render(page,   document.getElementById('app')    );
+ReactDOM.render(<App/> ,   document.getElementById('app')    );
 
