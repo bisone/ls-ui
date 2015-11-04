@@ -3,7 +3,7 @@ var webpack = require('webpack');
 var merge = require('webpack-merge');
 var TARGET = process.env.TARGET;
 var ROOT_PATH = path.resolve(__dirname);
-
+require('es6-promise').polyfill();
 var common = {
     entry: {
         app: [path.join(ROOT_PATH, 'app/App.js')],

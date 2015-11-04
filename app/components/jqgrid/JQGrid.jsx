@@ -1,7 +1,7 @@
 import React from 'react';
 import ReacDOM from 'react-dom';
 import 'free-jqgrid/js/i18n/grid.locale-cn.js';
-// import 'free-jqgrid/css/ui.jqgrid.css';
+import 'free-jqgrid/css/ui.jqgrid.css';
 import jqGrid from 'free-jqgrid/js/jquery.jqgrid.src.js';
 
 export default class JQGrid extends React.Component{
@@ -14,57 +14,9 @@ export default class JQGrid extends React.Component{
         this.initJQueryPlugin();
     }
 
-    initJQueryPlugin() {
-        var context = this;
-        $(this.refs.eventsgrid).jqGrid({
-            datatype: "local",
-            colNames: ['Title'],
-            colModel: [
-                { name: 'title', index: 'title', sortable: true, key: true }
-            ],
-            rowNum: 3,
-            sortname: '',
-            viewrecords: true,
-            sortorder: "desc",
-            caption: "",
-            pager: '#eventsgridpager',
-            autowidth: true,
-            loadOnce: true,
-            scrollOffset: false,
-            height: '',
-            subGrid: false,
-            onSelectRow: function (rowid, status, e) {
-                //Events.emit("selectRow", rowid, status, e);
-            },
-
-            loadComplete: function (maingrid_id) {
-                //alert(maingrid_id);
-            },
-
-            onPaging: function (pgButton, records) {
-                var nextPage = 1;
-
-                if (pgButton.indexOf("next") != -1) {
-                    nextPage = context.props.gridData.page + 1;
-                }
-                else {
-                    nextPage = context.props.gridData.page - 1;
-                }
-
-                //Events.emit("changeGridData", {filters: {}, order: { sortname: "", sortorder: context.props.gridData.order.sortorder}, page: nextPage});
-            },
-
-            onSortCol: function (index, columnIndex, sortOrder) {
-                //Events.emit("changeGridData", {filters: {}, order: { sortname: "", sortorder: sortOrder}, page: context.props.gridData.page});
-
-                return 'stop';
-            }
-        });
-        //this.refs.eventsgrid.addJSONData(this.props.eventsModel.attributes);
-        // this.refs.eventsgrid.jqGrid('setSelection', this.props.eventModel.attributes.title, false);
-        //$(element).find("#eventsgrid").jqGrid('sortGrid', 'title', false, context.props.gridData.order.sortorder); Bool not fired?¿?¿¿ -> Obrir cas a tirand!!!!!!
+    initJQueryPlugin(){
+        $(this.refs.eventsgrid).jqGrid(this.props.options);
     }
-
     componentWillUpdate(){
         $(this.refs.eventsgrid).GridUnload();
     }
@@ -83,3 +35,33 @@ export default class JQGrid extends React.Component{
         );
     }
 }
+JQGrid.defaultProps={
+    options:{
+            datatype: "local",
+            data: [
+            { id: "1", invdate: "2007-10-01", name: "test", note: "note", amount: "200.00", tax: "10.00", total: "210.00" },
+            { id: "2", invdate: "2007-10-02", name: "test2", note: "note2", amount: "300.00", tax: "20.00", total: "320.00" },
+            { id: "3", invdate: "2007-09-01", name: "test3", note: "note3", amount: "400.00", tax: "30.00", total: "430.00" },
+            { id: "4", invdate: "2007-10-04", name: "test", note: "note", amount: "200.00", tax: "10.00", total: "210.00" },
+            { id: "5", invdate: "2007-10-05", name: "test2", note: "note2", amount: "300.00", tax: "20.00", total: "320.00" },
+            { id: "6", invdate: "2007-09-06", name: "test3", note: "note3", amount: "400.00", tax: "30.00", total: "430.00" },
+            { id: "7", invdate: "2007-10-04", name: "test", note: "note", amount: "200.00", tax: "10.00", total: "210.00" },
+            { id: "8", invdate: "2007-10-03", name: "test2", note: "note2", amount: "300.00", tax: "20.00", total: "320.00" },
+            { id: "9", invdate: "2007-09-01", name: "test3", note: "note3", amount: "400.00", tax: "30.00", total: "430.00" }
+        ],
+            height: 250,
+            width: 780,
+            colModel: [
+                { label: 'Inv No', name: 'id', width: 75, key:true },
+                { label: 'Date', name: 'invdate', width: 90 },
+                { label: 'Client', name: 'name', width: 100 },
+                { label: 'Amount', name: 'amount', width: 80 },
+                { label: 'Tax', name: 'tax', width: 80 },
+                { label: 'Total', name: 'total', width: 80 },
+                { label: 'Notes', name: 'note', width: 150 }
+            ],
+            viewrecords: true, // show the current page, data rang and total records on the toolbar
+            caption: "Load jqGrid through Javascript Array",
+        }
+
+    };
