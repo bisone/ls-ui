@@ -4,16 +4,26 @@ function do_help(){
     echo "build "
 }
 
+
 function do_ui_build(){
     cnpm install
     npm run build 
 }
 
+function do_dev(){
+    do_ui_build
+    cd ../ls-ui-boilerplate
+    ./lsui dev
+    cd -
+}
 for OPT in $@ ; do
 
     echo "开始执行： $OPT"
 
     case $OPT in
+        dev)
+            do_dev
+            ;;
         build)
             do_ui_build
             ;;

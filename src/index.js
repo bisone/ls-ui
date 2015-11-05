@@ -1,4 +1,4 @@
-export JGGrid from './JQGrid';
+export JQGrid from './JQGrid';
 
 
 
