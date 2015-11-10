@@ -21,13 +21,35 @@ const baseConfig = {
 
   module: {
     loaders: [
-        { test: /\.js/, loader: jsLoader, exclude: /node_modules/ },
+        { test: /\.jsx?/, loader: jsLoader, exclude: /node_modules/ },
         {
             test: /\.css$/,
             loader: "style?sourceMap!css"
-        }
+        },
+        // LESS
+        {
+            test: /\.less$/,
+            loader: 'style?sourceMap!css?sourceMap!less?sourceMap'
+        },
+        {
+            // test: /\.(gif|png|woff|eot|woff2|ttf|svg)$/,
+            test: /\.(gif|png)$/,
+            loader: 'url-loader?limit=400000'
+        },
+
+        { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=400000&minetype=application/font-woff" },
+        { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=400000" }
+
+
+        
     ]
   },
+
+    resolve: {
+        modulesDirectories: ['node_modules', './src'],
+        extensions: ['', '.jsx', '.js']
+        
+    },       
 
   plugins: [
     new webpack.DefinePlugin({

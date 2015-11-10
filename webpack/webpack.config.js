@@ -9,7 +9,7 @@ export default _.extend({}, baseConfig, {
   output: {
     path: './dist',
     filename: options.optimizeMinimize ? '[name].min.js' : '[name].js',
-    library: 'ReactBootstrap',
+    library: 'ls-ui',
     libraryTarget: 'umd'
   },
 
