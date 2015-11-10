@@ -1,6 +1,6 @@
 {
   "name": "ls-ui",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "基于React的UI组件",
   "main": "lib/index.js",
   "directories": {
