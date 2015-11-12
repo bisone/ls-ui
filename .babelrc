@@ -1,6 +1,3 @@
 {
-  "stage": 1,
-  "optional": ["runtime"],
-  "loose": ["all"],
-  "plugins": ["dev-expression"]
+    "presets": ['es2015','stage-1','react']
 }
