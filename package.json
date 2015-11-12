@@ -7,7 +7,7 @@
     "example": "examples"
   },
   "scripts": {
-    "dist-modules": "node_modules/.bin/babel ./app --out-dir ./dist-modules",
+    "dist-modules": "babel ./app --out-dir ./dist-modules",
     "preversion": "npm run test && npm run lint && npm run dist && npm run dist-min && git commit --allow-empty -am \"Update dist\"",
     "prepublish": "npm run dist-modules",
     "build": "set TARGET=build&& webpack -p -d  --progress --profile --colors",
@@ -29,6 +29,7 @@
     "url": "https://github.com/bisone/ls-ui-boilerplate/issues"
   },
   "dependencies": {
+    "babel-plugin-transform-react-jsx": "^6.1.4",
     "bootstrap": "^3.3.5",
     "es6-promise": "^3.0.2",
     "font-awesome": "^4.4.0",
@@ -53,6 +54,7 @@
     "babel-eslint": "^4.1.5",
     "babel-loader": "^6.1.0",
     "babel-plugin-react-transform": "^1.1.1",
+    "babel-plugin-transform-react-jsx": "^6.1.4",
     "bower-webpack-plugin": "^0.1.8",
     "chokidar": "^1.0.3",
     "connect-history-api-fallback": "^1.1.0",

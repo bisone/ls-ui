@@ -12,7 +12,9 @@ var common = {
     output: {
         path: path.join(ROOT_PATH, 'public'),
         publicPath: '/public/',
-        filename: "[name].js"
+        filename: "[name].js",
+        libraryTarget: 'umd',
+        library: 'ls-ui'
     },
     plugins: [
         new webpack.ProvidePlugin({
