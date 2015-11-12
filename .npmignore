@@ -6,3 +6,4 @@ src/
 .*
 karma.conf.js
 webpack.config.babel.js
+README.md
