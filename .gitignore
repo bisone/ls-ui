@@ -1,5 +1,5 @@
 *.iml
-
+*~
 %APPDATA%
 target
 cstest_log.log

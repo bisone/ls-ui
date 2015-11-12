@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bisone/ls-ui-boilerplate.git"
+    "url": "https://github.com/bisone/ls-ui.git"
   },
   "keywords": [
     "React",
@@ -26,10 +26,9 @@
   "author": "Will Chang",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bisone/ls-ui-boilerplate/issues"
+    "url": "https://github.com/bisone/ls-ui/issues"
   },
   "dependencies": {
-    "babel-plugin-transform-react-jsx": "^6.1.4",
     "bootstrap": "^3.3.5",
     "es6-promise": "^3.0.2",
     "font-awesome": "^4.4.0",
@@ -55,6 +54,9 @@
     "babel-loader": "^6.1.0",
     "babel-plugin-react-transform": "^1.1.1",
     "babel-plugin-transform-react-jsx": "^6.1.4",
+    "babel-preset-es2015": "^6.1.4",
+    "babel-preset-react": "^6.1.4",
+    "babel-preset-stage-1": "^6.1.2",
     "bower-webpack-plugin": "^0.1.8",
     "chokidar": "^1.0.3",
     "connect-history-api-fallback": "^1.1.0",

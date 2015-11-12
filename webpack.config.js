@@ -56,7 +56,7 @@ if(TARGET === 'build') {
             loaders: [
                 {
                     test: /\.jsx?$/,
-                    loader: 'babel?sourceMaps&stage=1',
+                    loader: 'babel-loader',
                     include: path.join(ROOT_PATH, 'app')
                 },
                 {
@@ -117,9 +117,8 @@ if(TARGET === 'dev') {
         module: {
             loaders: [
                 {test: /\.jsx?$/,
-                 loaders: ['react-hot', 'babel?sourceMaps&stage=1&compact=true'],
+                 loaders: ['react-hot', 'babel-loader'],
                  include: path.join(ROOT_PATH, 'app')
-
                 },
                 {
                     test: /\.css$/,
