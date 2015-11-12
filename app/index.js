@@ -1,4 +1,4 @@
-import  JQGrid from './components/jqgrid/JQGrid.jsx';
+import  JQGrid from './components/jqgrid/JQGrid';
 
 
 module.exports = {JQGrid};
