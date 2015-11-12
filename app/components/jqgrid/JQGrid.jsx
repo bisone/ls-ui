@@ -15,10 +15,10 @@ export default class JQGrid extends React.Component{
     }
 
     initJQueryPlugin(){
-         $(this.refs.eventsgrid).jqGrid(this.props.options);
+        $(this.refs.eventsgrid).jqGrid(this.props.options);
     }
     componentWillUpdate(){
-         $(this.refs.eventsgrid).GridUnload();
+        $(this.refs.eventsgrid).GridUnload();
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -31,10 +31,7 @@ export default class JQGrid extends React.Component{
 
     render () {
         return (
-                <div>
-                <table ref="eventsgrid" />
-                <div id="eventsgridpager">  </div>
-                </div>
+            <div><table ref="eventsgrid" /><div id="eventsgridpager"></div></div>
         );
     }
 }
