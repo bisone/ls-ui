@@ -36,6 +36,7 @@
     "free-jqgrid": "^4.10.0",
     "history": "^1.13.0",
     "jquery": "^2.1.4",
+    "jquery-ui": "^1.10.5",
     "ls-ui": "0.0.9",
     "moment": "^2.10.6",
     "promise": "^7.0.4",
