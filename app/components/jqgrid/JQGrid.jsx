@@ -9,7 +9,7 @@ export default class JQGrid extends React.Component{
 
     constructor(props){
         super (props);
-        this.state= {pagerID: 'jqGridPager'+Math.floor(Math.random()*50)};
+        this.state= {pagerID: 'jqGridPager'+Math.random()};
     }
 
     componentDidMount() {
